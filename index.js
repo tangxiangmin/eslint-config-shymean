@@ -32,7 +32,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-console': 'off',
     'func-names': 'off',
-    'no-unused-vars': 'off',
+    'no-unused-vars': 'warn',
 
     'global-require': 'off',
     'no-underscore-dangle': 'off',
@@ -43,10 +43,10 @@ module.exports = {
     'no-shadow': 'off',
     'no-bitwise': 'warn',
     'no-restricted-syntax': 'off',
+    'object-curly-newline': 'off',
 
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'error',
     '@typescript-eslint/no-explicit-any': 'warn',
   },
 }

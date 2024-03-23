@@ -1,12 +1,13 @@
-function add(x, y) {
+function add(x: number, y: number) {
   return x + y
 }
 
 const a = 1
 
-a = 10
 add(a, 1)
 
-let a = false
+const str = '123'
 
-const str = "123"
+const obj = { x: 1, y: 2, b: 3 }
+
+const { x, y } = obj
