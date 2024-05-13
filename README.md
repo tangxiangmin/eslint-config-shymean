@@ -13,9 +13,11 @@ npm i eslint-config-shymean
 
 edit `eslintrc.js`
 ```
-module.exports = {
-  extends: ['shymean'],
-}
+import antfu from '@antfu/eslint-config'
+import { createESLintConfig } from 'eslint-config-shymean'
+
+export default antfu(createESLintConfig())
+
 ```
 
 for typescript `tsconfig.json`
@@ -24,7 +26,7 @@ for typescript `tsconfig.json`
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "strict": true, // for webstorm
+    "strict": true,
   },
 }
 ```

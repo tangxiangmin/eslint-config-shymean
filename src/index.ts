@@ -1,23 +1,11 @@
-module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-  },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-  ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  plugins: ['@typescript-eslint'],
-  rules: {
-    camelcase: 'off',
+interface ConfigOption {
+  vue: boolean
+}
+function createESLintConfig(options: ConfigOption = { vue: false }) {
+  const { vue } = options
+
+  const rules: Record<string, any> = {
+    'camelcase': 'off',
     'no-mixed-operators': 'off',
     'no-await-in-loop': 'off',
     'no-continue': 'off',
@@ -28,8 +16,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
-
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-console': 'off',
     'func-names': 'off',
     'no-unused-vars': 'warn',
@@ -48,5 +34,19 @@ module.exports = {
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-explicit-any': 'warn',
-  },
+  }
+
+  if (vue) {
+    rules['vue/block-order'] = ['error', {
+      order: [['template', 'script'], 'style'],
+    }]
+  }
+  return {
+    rules,
+  }
 }
+
+export {
+  createESLintConfig,
+}
+export default {}

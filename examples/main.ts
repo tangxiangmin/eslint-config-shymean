@@ -4,7 +4,7 @@ function add(x: number, y: number) {
 
 const a = 1
 
-add(a, 1)
+// add(a, '2')
 
 const str = '123'
 

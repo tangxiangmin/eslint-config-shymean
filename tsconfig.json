@@ -1,20 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
     "strict": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "~/*": [
-        "typings/*"
-      ]
-    }
+    "lib": ["es2015"],
+    "outDir": "./dist"
   },
   "include": [
-    "examples/**/*.ts",
+    "./src/**/*",
   ]
 }
